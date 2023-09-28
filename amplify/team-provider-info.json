@@ -1,0 +1,25 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-slannotatespa-dev-140753-authRole",
+      "UnauthRoleArn": "arn:aws:iam::779444319374:role/amplify-slannotatespa-dev-140753-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::779444319374:role/amplify-slannotatespa-dev-140753-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-slannotatespa-dev-140753-deployment",
+      "UnauthRoleName": "amplify-slannotatespa-dev-140753-unauthRole",
+      "StackName": "amplify-slannotatespa-dev-140753",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:779444319374:stack/amplify-slannotatespa-dev-140753/fb99a790-5dbc-11ee-bb3c-0e4ac61c8a11",
+      "AmplifyAppId": "d2vx7me21hjyy2"
+    },
+    "categories": {
+      "auth": {
+        "slannotatespa40725dcb": {
+          "userPoolId": "ap-northeast-1_OgwPioQdZ",
+          "userPoolName": "SLannotateUserPool",
+          "webClientId": "5aau68h0e970c3015ktaaab4p3",
+          "nativeClientId": "5aau68h0e970c3015ktaaab4p3"
+        }
+      }
+    }
+  }
+}

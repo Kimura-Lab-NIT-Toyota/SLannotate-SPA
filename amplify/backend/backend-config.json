@@ -1,0 +1,11 @@
+{
+  "auth": {
+    "slannotatespa40725dcb": {
+      "service": "Cognito",
+      "serviceType": "imported",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
