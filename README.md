@@ -32,7 +32,7 @@ Nextをざっくりいうと、
 開発時は上記のコマンドでサーバーを起動して動作を確認してください。本番環境にデプロイするには、単にGitHubのmainブランチに変更を適用すれば、amplifyがうまいことやってくれます。
 
 もし変更したい場合、ブラウザのAWSコンソール上のAmplifyのメニューから設定してください。
-
+TODO:amplify add authで既存Cognito使うやり方を書く
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

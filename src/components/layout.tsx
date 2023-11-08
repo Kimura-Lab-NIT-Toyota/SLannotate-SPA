@@ -1,4 +1,3 @@
-import { UseAuthenticator, useAuthenticator } from "@aws-amplify/ui-react";
 import Logout from "@/components/Logout";
 import { Authenticator } from "@aws-amplify/ui-react";
 import { I18n, Amplify, API, Auth } from "aws-amplify";
@@ -15,6 +14,7 @@ import { translations } from "@aws-amplify/ui";
 I18n.putVocabularies(translations);
 I18n.setLanguage("ja");
 
+//AWS周りの設定
 const awsConfig = {
   Auth: {
     region: "ap-northeast-1",
@@ -35,29 +35,15 @@ const awsConfig = {
 
 Amplify.configure(awsConfig);
 
-//TODO:API叩く関数の位置考える
-const handleClick = async function () {
-  const user = await Auth.currentAuthenticatedUser();
-  const token = user.signInUserSession.idToken.jwtToken;
-  const myInit = {
-    headers: {
-      Authorization: token,
-    },
-  };
-
-  const res = await API.get("slannotate", "/users/usr1/files/test.mp4", myInit);
-  console.log(res);
-};
-
 interface Props {
   children: React.ReactNode;
 }
-
+//引数で受け取ったChildren(子コンポーネント)を全体で使うスタイルでラップして返す
+//これで全てのコンポーネントがログアウトボタンを持ったり、認証機能を使えるようになる
 export default function Layout({ children }: Props) {
   return (
     <Authenticator socialProviders={["google"]}>
       <Authenticator.Provider>
-        <button onClick={() => handleClick()}>test</button>
         <Logout />
         {children}
       </Authenticator.Provider>
