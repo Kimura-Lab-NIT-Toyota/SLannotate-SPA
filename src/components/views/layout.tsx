@@ -1,4 +1,4 @@
-import Logout from "@/components/Logout";
+import Logout from "@/components/parts/Logout";
 import { Authenticator } from "@aws-amplify/ui-react";
 import { I18n, Amplify, API, Auth } from "aws-amplify";
 

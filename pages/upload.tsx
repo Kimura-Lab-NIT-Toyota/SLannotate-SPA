@@ -1,5 +1,5 @@
-import RoutingButton from "@/components/RoutingButton";
-import VideoUploader from "@/components/VideoUploader";
+import RoutingButton from "@/components/parts/RoutingButton";
+import VideoUploader from "@/components/views/VideoUploader";
 export default function Home() {
   return (
     <main>

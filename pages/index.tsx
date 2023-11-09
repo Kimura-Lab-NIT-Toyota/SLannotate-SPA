@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import RoutingButton from '@/components/RoutingButton'
+import RoutingButton from '@/components/parts/RoutingButton'
 
 export default function Home() {
   return (
