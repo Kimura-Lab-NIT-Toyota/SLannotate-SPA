@@ -1,5 +1,5 @@
 import DraggableSelect from "@/components/parts/DraggableSelect";
-import {AnnotationResult} from "@/components/interfaces/interfaces";
+import {AnnotationResult} from "@/components/models/types";
 type props = {
     annotations : AnnotationResult[]
 }

@@ -1,6 +1,6 @@
 import { API, Auth } from "aws-amplify";
 import { useState, useEffect } from "react";
-import { AnnotationResult } from "@/components/interfaces/interfaces";
+import { AnnotationResult } from "@/components/models/types";
 
 export const useAnnotater = (videoId: string) => {
   const [video, setVideo] = useState<File | null>(null);
@@ -60,6 +60,7 @@ export const useAnnotater = (videoId: string) => {
     if (result.error) {
       console.error(`Failed to fetch videos: ${result.error}`);
     } else {
+      let tmpAnnotateResult = AnnotationResult[{candidates: result.annotations, probabilities: result.probabilities}];
       //TODO:適当に実装しているのでちゃんと確認する
       setAnnotations(result.annotations);
       const initiatedResult = result.annotations.map(
