@@ -1,16 +1,17 @@
-import DraggableSelect from "@/components/parts/DraggableSelect";
+import AnnotationSelect from "./AnnotationSelect";
 import {AnnotationResult} from "@/components/models/types";
 type props = {
     annotations : AnnotationResult[]
+    handleResultChange: (v: string, id: number) => void
 }
 
 export default function AnnotateArea(props:props){
     const annotations = Array.isArray(props.annotations) ? props.annotations : []
     return(
         <>
-        {annotations.map((options:AnnotationResult,index:number)=>{
+        {annotations.map((r:AnnotationResult,index:number)=>{
             return(
-                <DraggableSelect id={index} candidates={options.candidates} probabilities={options.probabilities}/>
+                <AnnotationSelect id={index} candidates={r.candidates} handleResultChange={props.handleResultChange}/>
             )
         })}
         </>

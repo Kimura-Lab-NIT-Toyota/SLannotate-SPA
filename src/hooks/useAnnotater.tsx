@@ -17,15 +17,16 @@ export const useAnnotater = (videoId: string) => {
         Authorization: token,
       },
     };
+    console.log(result)
     //TODO:Upload fixed result
-    // const result = await API.get("slannotate", `users/${userName}/files`, init);
+    // E.G.const res = await API.get("slannotate", `users/${userName}/files`, init);
   };
 
   const handleResultChange = (
-    e: React.ChangeEvent<HTMLTextAreaElement>,
+    v: string,
     id: number
   ) => {
-    result[id] = e.target.value;
+    result[id] = v;
     setResult(result);
   };
   const fetchVideo = async (videoId: string) => {
@@ -51,24 +52,24 @@ export const useAnnotater = (videoId: string) => {
         Authorization: token,
       },
     };
-    const result = await API.get(
+    const res = await API.get(
       "slannotate",
       `users/${userName}/files/${videoId}`,
       init
     );
 
-    if (result.error) {
-      console.error(`Failed to fetch videos: ${result.error}`);
+    if (res.error) {
+      console.error(`Failed to fetch videos: ${res.error}`);
     } else {
-      let tmpAnnotateResult = AnnotationResult[{candidates: result.annotations, probabilities: result.probabilities}];
-      //TODO:適当に実装しているのでちゃんと確認する
-      setAnnotations(result.annotations);
-      const initiatedResult = result.annotations.map(
+      setAnnotations([{ candidates: ["A","B","c"], probabilities: [1,2,3] },{ candidates: ["犬","猫"], probabilities: [1,2] }])
+      // setAnnotations( [{candidates: res.annotations, probabilities: res.probabilities}] as AnnotationResult[]);
+      const initiatedResult = annotations.map(
         (annotation: AnnotationResult) => {
           return annotation.candidates[0];
         }
       );
       setResult(initiatedResult);
+      console.log(initiatedResult);
     }
   };
   //初期処理
@@ -76,5 +77,5 @@ export const useAnnotater = (videoId: string) => {
     fetchVideo(videoId);
     fetchResult(videoId);
   }, []);
-  return { video, result, handleResultChange, handleEditConfirmed };
+  return { video, result, annotations,handleResultChange, handleEditConfirmed };
 };
