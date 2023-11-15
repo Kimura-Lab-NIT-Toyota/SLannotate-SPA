@@ -3,3 +3,4 @@ export interface AnnotationResult {
     candidates : string[]
     probabilities : number[]
 }
+
