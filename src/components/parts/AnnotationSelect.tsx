@@ -19,8 +19,8 @@ export default function AnnotationSelect(props: props){
         }}
         defaultValue={props.candidates[0]}
         >
-        {props.candidates.map((c) => {
-          return <MenuItem value={c}>{c}</MenuItem>;
+        {props.candidates.map((c,index) => {
+          return <MenuItem key = {index} value={c}>{c}</MenuItem>;
         })}
       </Select>
   );
