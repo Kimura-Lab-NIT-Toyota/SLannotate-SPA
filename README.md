@@ -1,3 +1,6 @@
+## App
+https://main.d2twytevk47v4b.amplifyapp.com/
+
 next-app-createとAWS Amplifyで構築されています。
 
 ## Getting Started
