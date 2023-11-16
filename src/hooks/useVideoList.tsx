@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import { API, Auth } from "aws-amplify";
 
 export const useVideoList = () => {
@@ -22,5 +22,11 @@ export const useVideoList = () => {
     }
   };
 
-  return { videos, fetchVideosList };
+  useEffect(() => {
+    (async () => {
+      await fetchVideosList();
+    })();
+  }, []);
+
+  return { videos};
 };

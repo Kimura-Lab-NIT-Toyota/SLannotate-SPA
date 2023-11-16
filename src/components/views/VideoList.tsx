@@ -5,12 +5,8 @@ import { useVideoList } from "@/hooks/useVideoList";
 
 export default function VideoList() {
   //APIから動画一覧を取得するカスタムフックを使う
-  const { videos, fetchVideosList } = useVideoList();
-  useEffect(() => {
-    (async () => {
-      await fetchVideosList();
-    })();
-  }, []);
+  const { videos} = useVideoList();
+  
   const router = useRouter();
 
   //TODO:add thumbnail of video

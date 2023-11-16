@@ -1,5 +1,5 @@
-import Annotater from "@/components/Annotater";
-import RoutingButton from "@/components/RoutingButton";
+import Annotater from "@/components/views/Annotater";
+import RoutingButton from "@/components/parts/RoutingButton";
 
 export default function Annotate() {
   //Nextのルーティングの仕様により、pages/annotate/*にマッチする全てのページがここにルーティングされる
