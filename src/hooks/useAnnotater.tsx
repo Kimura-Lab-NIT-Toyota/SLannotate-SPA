@@ -1,11 +1,14 @@
 import { API, Auth } from "aws-amplify";
 import { useState, useEffect } from "react";
 import { AnnotationResult } from "@/components/models/types";
+import { useRouter } from "next/router";
 
-export const useAnnotater = (videoId: string) => {
+export const useAnnotater = () => {
   const [video, setVideo] = useState<File | null>(null);
   const [result, setResult] = useState<string[]>([]);
   const [annotations, setAnnotations] = useState<AnnotationResult[]>([]);
+  const router = useRouter();
+  const videoId = router.query.videoId as string;
 
   const handleEditConfirmed = async () => {
     const user = await Auth.currentAuthenticatedUser();
@@ -16,10 +19,19 @@ export const useAnnotater = (videoId: string) => {
       headers: {
         Authorization: token,
       },
+      body:{
+        result:result
+      }
     };
     console.log(result)
     //TODO:Upload fixed result
-    // E.G.const res = await API.get("slannotate", `users/${userName}/files`, init);
+    const res = await API.put("slannotate", `users/${userName}/files/${videoId}`, init);
+    if (res.error) {
+      console.error(`Failed to upload result: ${res.error}`);
+    } else {
+      console.log("Success to upload result");
+      console.log(res);
+    }
   };
 
   const handleResultChange = (
@@ -74,8 +86,9 @@ export const useAnnotater = (videoId: string) => {
   };
   //初期処理
   useEffect(() => {
+    if (!router.isReady) return;
     fetchVideo(videoId);
     fetchResult(videoId);
-  }, []);
+  }, [router]);
   return { video, result, annotations,handleResultChange, handleEditConfirmed };
 };
