@@ -7,6 +7,7 @@ export const useVideoUploader = () => {
     const [video,setVideo] = useState<File|null>(null);
     const router = useRouter();
     const handleVideoChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+        if (!e.target.files) return;
         const file = e.target.files[0];
         if(!file) return;
         setVideo(file);
@@ -24,6 +25,7 @@ export const useVideoUploader = () => {
           body: video,
         };
         //upload file with using API
+        if (!video) return;
         const result = await API.put(
           "slannotate",
           `users/${userName}/files/${video.name}`,

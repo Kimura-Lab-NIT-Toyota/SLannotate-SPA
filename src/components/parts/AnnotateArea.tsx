@@ -11,7 +11,7 @@ export default function AnnotateArea(props:props){
         <>
         {annotations.map((r:AnnotationResult,index:number)=>{
             return(
-                <AnnotationSelect id={index} candidates={r.candidates} handleResultChange={props.handleResultChange}/>
+                <AnnotationSelect key={index} candidates={r.candidates} handleResultChange={props.handleResultChange}/>
             )
         })}
         </>

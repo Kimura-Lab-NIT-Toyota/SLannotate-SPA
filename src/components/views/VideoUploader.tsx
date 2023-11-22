@@ -1,5 +1,5 @@
 import {useVideoUploader} from "@/hooks/useVideoUploader";
-export default function videoUploader(){
+export default function VideoUploader(){
     //動画のアップロードの具体的な実装はカスタムフックにまとめておき、UIの構造のみを定義する
     const {video,handleVideoChange,handleUpload} = useVideoUploader();
     return(
