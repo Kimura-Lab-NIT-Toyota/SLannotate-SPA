@@ -73,15 +73,16 @@ export const useAnnotater = () => {
     if (res.error) {
       console.error(`Failed to fetch videos: ${res.error}`);
     } else {
-      setAnnotations([{ candidates: ["A","B","c"], probabilities: [1,2,3] },{ candidates: ["犬","猫"], probabilities: [1,2] }])
-      // setAnnotations( [{candidates: res.annotations, probabilities: res.probabilities}] as AnnotationResult[]);
-      const initiatedResult = annotations.map(
+      let fetchedAnnotations = [{ candidates: ["A","B","c"], probabilities: [1,2,3] },{ candidates: ["犬","猫"], probabilities: [1,2] }]//res.annotations as AnnotationResult[];
+      setAnnotations(fetchedAnnotations);
+      //setXXXは関数の中では値が更新されていないので変数から呼ぶ
+      const initiatedResult = fetchedAnnotations.map(
         (annotation: AnnotationResult) => {
           return annotation.candidates[0];
         }
       );
       setResult(initiatedResult);
-      console.log(initiatedResult);
+      console.log("result inintiated:",initiatedResult);
     }
   };
   //初期処理
