@@ -19,6 +19,7 @@ export const useVideoList = () => {
       console.error(`Failed to fetch videos: ${result.error}`);
     } else {
       setVideos(result.videos); //stateの更新をするとコンポーネントが更新される
+      console.log(result);
     }
   };
 
@@ -30,3 +31,4 @@ export const useVideoList = () => {
 
   return { videos};
 };
+

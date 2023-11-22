@@ -2,7 +2,7 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 
 type props = {
-  id: number;
+  key: number;
   candidates: string[];
   handleResultChange: (v: string, id: number) => void;
 };
@@ -15,8 +15,9 @@ export default function AnnotationSelect(props: props){
         onChange={(e)=>{
           const v = e.target.value as string
           console.log(v)
-          props.handleResultChange(v,props.id)
+          props.handleResultChange(v,props.key)
         }}
+        key={props.key}
         defaultValue={props.candidates[0]}
         >
         {props.candidates.map((c,index) => {
