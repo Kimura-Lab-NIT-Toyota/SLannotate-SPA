@@ -9,7 +9,7 @@ export const useVideoUploader = () => {
     const handleVideoChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         if (!e.target.files) return;
         const file = e.target.files[0];
-        if(!file) return;
+        console.log(file)
         setVideo(file);
     }
 
@@ -28,14 +28,14 @@ export const useVideoUploader = () => {
         if (!video) return;
         const result = await API.put(
           "slannotate",
-          `users/${userName}/files/${video.name}`,
+          `users/${userName}/files/${video.name}/blob`,
           init
         );
         //handle error
         if (result.error) {
             alert(`Failed to upload. Please try again ${result.error}`);
         } else {
-          router.push("/annotate/${video.name}");//redirect to annotate page
+          router.push(`/annotate/${video.name}`);//redirect to annotate page
         }
       };
 
