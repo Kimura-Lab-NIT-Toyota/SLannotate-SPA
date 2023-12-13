@@ -3,13 +3,13 @@ frontend:
   phases:
     preBuild:
       commands:
-        - nvm install 18 #Nodeのバージョンを合わせるためにこのファイルを書いている
+        - nvm install 18 # Nodeのバージョンを合わせる
         - nvm use 18
         - yarn install
     build:
       commands:
         - yarn build
   artifacts:
-  baseDirectory: .next  
-  files:
-    - '**/*' 
+    baseDirectory: .next  
+    files:
+      - '**/*'
