@@ -18,28 +18,34 @@ export const useVideoUploader = () => {
     const userName = user.username;
     const token = user.signInUserSession.idToken.jwtToken;
 
-    
-    
-    const init = {
-      headers: {
-        Authorization: token,
-      },
-      body: video,
-    };
     //upload file with using API
     if (!video) return;
-    await API.put(
-      "slannotate",
-      `users/${userName}/files/${video.name}/blob`,
-      init
-    )
-      .then((res) => {
-        console.log(res);
-        router.push(`/annotate/${video.name}`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    //よくわからんけど、reader.onloadの中でbase64エンコード済みの動画が手に入るらしい。
+    const reader = new FileReader();
+    reader.readAsDataURL(video);
+    reader.onload = async() => {
+      const init = {
+        headers: {
+          Authorization: token,
+          "Content-Type": "video/mp4",
+        },
+        body: reader.result,
+      };
+      console.log(reader.result);
+      await API.put(
+        "slannotate",
+        `users/${userName}/files/${video.name}/blob`,
+        init
+      )
+        .then((res) => {
+          console.log(res);
+          router.push(`/annotate/${video.name}`);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    
   };
 
   return { video, handleVideoChange, handleUpload };
