@@ -1,6 +1,4 @@
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-
+import CreatableSelect from 'react-select/creatable';
 type props = {
   id: number;
   candidates: string[];
@@ -10,19 +8,20 @@ type props = {
 export default function AnnotationSelect(props: props){
  
   //optionsで受け取ったもの(手話認識結果の候補一覧)をSelectの選択肢に入れる
+  props.candidates.map((c,index) => {
+    
+  })
   return (
-      <Select
+      <CreatableSelect
+        isClearable
+        placeholder="選択肢にない場合は入力できます"
         onChange={(e)=>{
-          const v = e.target.value as string
-          console.log(v)
-          props.handleResultChange(v,props.id)
+          if (!e) return;
+            props.handleResultChange(e?.value,props.id)
         }}
-        key={props.id}
-        defaultValue={props.candidates[0]}
-        >
-        {props.candidates.map((c,index) => {
-          return <MenuItem key = {index} value={c}>{c}</MenuItem>;
+        options={props.candidates.map((c,index) => {
+          return {value:c,label:c}
         })}
-      </Select>
+      />
   );
 };
