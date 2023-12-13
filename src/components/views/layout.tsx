@@ -42,7 +42,7 @@ interface Props {
 //これで全てのコンポーネントがログアウトボタンを持ったり、認証機能を使えるようになる
 export default function Layout({ children }: Props) {
   return (
-    <Authenticator socialProviders={["google"]}>
+    <Authenticator>
       <Authenticator.Provider>
         <Logout />
         {children}
