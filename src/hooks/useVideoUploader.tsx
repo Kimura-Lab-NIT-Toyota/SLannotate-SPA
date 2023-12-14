@@ -34,7 +34,7 @@ export const useVideoUploader = () => {
       console.log(reader.result);
       await API.put(
         "slannotate",
-        `users/${userName}/files/${video.name}/blob`,
+        `/users/${userName}/files/${video.name}/blob`,
         init
       )
         .then((res) => {

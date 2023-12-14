@@ -13,7 +13,7 @@ export const useVideoList = () => {
         Authorization: token,
       },
     };
-    const result = await API.get("slannotate", `users/${userName}/files`, init);
+    const result = await API.get("slannotate", `/users/${userName}/files`, init);
 
     if (result.error) {
       console.error(`Failed to fetch videos: ${result.error}`);

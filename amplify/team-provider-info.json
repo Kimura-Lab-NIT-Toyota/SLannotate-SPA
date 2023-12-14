@@ -13,11 +13,11 @@
     },
     "categories": {
       "auth": {
-        "slannotatespa40725dcb": {
-          "userPoolId": "ap-northeast-1_OgwPioQdZ",
+        "slannotatespa79eaea43": {
+          "userPoolId": "ap-northeast-1_Yqa9FTvCp",
           "userPoolName": "SLannotateUserPool",
-          "webClientId": "5aau68h0e970c3015ktaaab4p3",
-          "nativeClientId": "5aau68h0e970c3015ktaaab4p3"
+          "webClientId": "7t0illf4nld48udim6hhn32mhk",
+          "nativeClientId": "7t0illf4nld48udim6hhn32mhk"
         }
       }
     }

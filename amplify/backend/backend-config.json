@@ -1,6 +1,6 @@
 {
   "auth": {
-    "slannotatespa40725dcb": {
+    "slannotatespa79eaea43": {
       "service": "Cognito",
       "serviceType": "imported",
       "providerPlugin": "awscloudformation",
