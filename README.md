@@ -49,6 +49,7 @@ Nextをざっくりいうと、
 開発時は上記のコマンドでサーバーを起動して動作を確認してください。本番環境にデプロイするには、単にGitHubのmainブランチに変更を適用すれば、amplifyがうまいことやってくれます。
 
 もし設定などを変更したい場合、ブラウザのAWSコンソール上のAmplifyのメニューから設定してください。
+Cognitoの設定等に変更をした場合、再度importが必要になると思います。
 参考:https://dev.classmethod.jp/articles/amplify-with-existing-cognito-apigateway/
 
 ## Learn More
