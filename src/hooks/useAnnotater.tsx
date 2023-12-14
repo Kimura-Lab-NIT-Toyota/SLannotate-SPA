@@ -24,7 +24,7 @@ export const useAnnotater = () => {
       }
     };
     console.log(result)
-    const res = await API.put("slannotate", `users/${userName}/files/${videoId}`, init);
+    const res = await API.put("slannotate", `/users/${userName}/files/${videoId}`, init);
     if (res.error) {
       console.error(`Failed to upload result: ${res.error}`);
     } else {
@@ -50,7 +50,7 @@ export const useAnnotater = () => {
         Authorization: token,
       },
     };
-    const res = await API.get('slannotate', `users/${userName}/files/${videoId}/blob`, init);
+    const res = await API.get('slannotate', `/users/${userName}/files/${videoId}/blob`, init);
     if (res.error) {
       console.error(`Failed to fetch videos: ${res.error}`);
     } else {
@@ -69,7 +69,7 @@ export const useAnnotater = () => {
     };
     const res = await API.get(
       "slannotate",
-      `users/${userName}/files/${videoId}`,
+      `/users/${userName}/files/${videoId}`,
       init
     );
 

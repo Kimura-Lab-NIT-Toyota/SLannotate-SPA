@@ -1,11 +1,25 @@
 ## App
+
 https://main.d2twytevk47v4b.amplifyapp.com/
 
 next-app-createとAWS Amplifyで構築されています。
 
 ## Getting Started
+### requirement
+SLannotate-app(バックエンド)がデプロイされていること。
+また、APIのエンドポイントやCognito(ユーザ認証)の設定を行う必要があります。
+#### local
+.env.localファイルを作成し、
+```
+NEXT_PUBLIC_COGNITO_USER_POOL_ID=CognitoのユーザープールID(AWSコンソールのCognitoで確認)
+NEXT_PUBLIC_COGNITO_USER_POOL_WEB_CLIENT_ID=CognitoのクライアントID(AWSコンソールのCognito→UserPool→アプリケーションの統合で確認)
+NEXT_PUBLIC_API_ENDPOINT=APIエンドポイント(AWSコンソールのAPI Gatewayで確認)
+```
+#### Cloud
+Amplify→アプリを選択→左のメニューから「環境変数」を選択し、上記の値を設定
 
-run the development server:
+### development
+ローカルで開発用サーバーを立ち上げるには
 
 ```bash
 npm run dev
@@ -34,8 +48,9 @@ Nextをざっくりいうと、
 
 開発時は上記のコマンドでサーバーを起動して動作を確認してください。本番環境にデプロイするには、単にGitHubのmainブランチに変更を適用すれば、amplifyがうまいことやってくれます。
 
-もし変更したい場合、ブラウザのAWSコンソール上のAmplifyのメニューから設定してください。
-TODO:amplify add authで既存Cognito使うやり方を書く
+もし設定などを変更したい場合、ブラウザのAWSコンソール上のAmplifyのメニューから設定してください。
+参考:https://dev.classmethod.jp/articles/amplify-with-existing-cognito-apigateway/
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
