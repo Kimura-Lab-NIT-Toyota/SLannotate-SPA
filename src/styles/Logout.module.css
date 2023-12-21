@@ -1,0 +1,23 @@
+/* ログアウトボタンの基本スタイル */
+.logoutButton {
+    padding: 8px 15px; /* 適切なパディング */
+    border: 2px solid #dc3545; /* 赤い境界線 */
+    background-color: transparent; /* 透明な背景 */
+    color: #dc3545; /* 赤いテキスト */
+    font-size: 14px; /* フォントサイズ */
+    border-radius: 4px; /* 角の丸み */
+    cursor: pointer; /* カーソルスタイル */
+    transition: background-color 0.2s, color 0.2s; /* 背景色と色の変化のアニメーション */
+}
+
+/* ホバー時のスタイル */
+.logoutButton:hover {
+    background-color: #dc3545; /* ホバー時の背景色 */
+    color: white; /* ホバー時のテキスト色 */
+}
+
+/* フォーカス時のスタイル (アクセシビリティ対応) */
+.logoutButton:focus {
+    outline: none; /* デフォルトのアウトラインを削除 */
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.5); /* フォーカス時のシャドウ */
+}

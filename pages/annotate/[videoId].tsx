@@ -5,7 +5,7 @@ export default function Annotate() {
   //Nextのルーティングの仕様により、pages/annotate/*にマッチする全てのページがここにルーティングされる
   return (
     <>
-      <RoutingButton at="/" />
+      <RoutingButton  at="/" />
       <Annotater />
     </>
   );

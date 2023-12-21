@@ -1,0 +1,38 @@
+/* テーブルの全体的なスタイル */
+.table {
+    width: 100%; /* テーブルの幅を全体に広げる */
+    border-collapse: collapse; /* セル間の境界線を1本にする */
+    margin-top: 20px; /* 上部のマージン */
+}
+
+/* ヘッダーセルのスタイル */
+.th {
+    background-color: #4CAF50; /* ヘッダーの背景色 */
+    color: white; /* ヘッダーのテキスト色 */
+    text-align: left; /* テキストを左揃えにする */
+    padding: 12px; /* パディング */
+}
+
+/* データセルのスタイル */
+.td {
+    border: 1px solid #ddd; /* セルの境界線のスタイル */
+    padding: 8px; /* パディング */
+}
+
+/* 行のホバー時のスタイル */
+.tr:nth-child(even){background-color: #f2f2f2;} /* 偶数行の背景色 */
+.tr:hover {background-color: #ddd;} /* ホバー時の背景色 */
+
+/* ボタンのスタイル */
+.button {
+    background-color: #4CAF50; /* ボタンの背景色 */
+    color: white; /* ボタンのテキスト色 */
+    padding: 10px 20px; /* ボタンのパディング */
+    border: none; /* ボタンの境界線を削除 */
+    border-radius: 4px; /* ボタンの角の丸み */
+    cursor: pointer; /* ホバー時のカーソルのスタイル */
+}
+
+.button:hover {
+    background-color: #45a049; /* ホバー時のボタンの背景色 */
+}

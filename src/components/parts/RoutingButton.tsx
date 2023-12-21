@@ -1,8 +1,9 @@
 import Link from "next/link";
-export default function RoutingButton(props: { at: string }) {
+import styles from "@/styles/RoutingButton.module.css";
+export default function RoutingButton(props: {at: string }) {
   return (
     <Link href={props.at}>
-      <button>Go to {props.at === "/" ? "Home" : props.at}</button>
+      <button className={styles.routingButton}> {props.at === "/" ? "Home" : props.at}に移動</button>
     </Link>
   );
 }
