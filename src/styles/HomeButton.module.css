@@ -1,0 +1,23 @@
+/* ホームボタンの基本スタイル */
+.homeButton {
+    padding: 10px 20px; /* 適切なパディング */
+    border: none; /* 境界線なし */
+    background-color: #007bff; /* 青い背景色 */
+    color: white; /* 白いテキスト */
+    font-size: 16px; /* フォントサイズ */
+    border-radius: 5px; /* 角の丸み */
+    cursor: pointer; /* カーソルスタイル */
+    transition: background-color 0.2s, transform 0.2s; /* 背景色と変形のアニメーション */
+}
+
+/* ホバー時のスタイル */
+.homeButton:hover {
+    background-color: #0056b3; /* ホバー時の背景色 */
+    transform: scale(1.05); /* 少し大きくする */
+}
+
+/* フォーカス時のスタイル (アクセシビリティ対応) */
+.homeButton:focus {
+    outline: none; /* デフォルトのアウトラインを削除 */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* フォーカス時のシャドウ */
+}

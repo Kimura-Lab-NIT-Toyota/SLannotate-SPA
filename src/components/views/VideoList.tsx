@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import Link from "next/link";
 import { useVideoList } from "@/hooks/useVideoList";
+import styles from "@/styles/VideoList.module.css";
 
 export default function VideoList() {
   //APIから動画一覧を取得するカスタムフックを使う
@@ -12,18 +12,18 @@ export default function VideoList() {
   //TODO:add thumbnail of video
   return (
     <main>
-      <table>
+      <table className={styles.table}>
         <thead>
-          <tr>
-            <th>videoId</th>
-            <th>status</th>
-            <th>result</th>
+          <tr className={styles.tr}>
+            <th className={styles.th}>videoId</th>
+            <th className={styles.th}>status</th>
+            <th className={styles.th}>result</th>
           </tr>
         </thead>
         <tbody>
           {/* map関数を使って動画一覧を表示する、いい感じにtable(表)にする*/}
           {videos.map((video) => (
-            <tr key={video.videoId}>
+            <tr className={styles.tr} key={video.videoId}>
               <td>
                 {
                   //sスラッシュ区切りで一番最後の要素を出す。
@@ -34,7 +34,7 @@ export default function VideoList() {
               <td>{video.status}</td>
               <td>{video.result}</td>
               <td>
-                <button
+                <button className={styles.button}
                   onClick={() =>
                     router.push(`/annotate/${video.videoId.split("/").at(-1)}`)
                   }

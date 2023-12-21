@@ -1,0 +1,20 @@
+
+/* ホバー時のエフェクト */
+
+.routingButton:hover{
+    background-color: #58be72; /* ホバー時の背景色 */
+    transform: translateY(-2px); /* 少し上に移動 */
+}
+
+
+/* 視聴ボタン特有のスタイル */
+.routingButton {
+    background-color: #28a745; /* 緑色の背景 */
+    color: white; /* 白色のテキスト */
+    padding: 10px 20px; /* パディング */
+    border: none; /* 境界線なし */
+    border-radius: 5px; /* 角の丸み */
+    cursor: pointer; /* カーソルスタイル */
+    font-size: 16px; /* フォントサイズ */
+    transition: background-color 0.3s, transform 0.3s; /* 背景色と変形のアニメーション */
+}
